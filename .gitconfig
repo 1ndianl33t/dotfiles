@@ -1,0 +1,35 @@
+[user]
+  name = Shiv Chouhan
+  email = 1ndianl33t.shiv@gmail.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[color "status"]
+  added = green
+  changed = blue
+  untracked = red 
+[color "diff"]
+  meta = yellow
+  old = red 
+  new = green
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  tm = merge --no-ff --no-commit
+  pp = !git pull && git push
+  rm-untracked = !rm $(git ls-files --other --exclude-standard)
+  lsblame = !cd "./$GIT_PREFIX" && ls -A | xargs -n1 -I'{}' git log --no-merges --format='%h (%an%x09%ai) {}' -1 '{}' | column -ts $'\t'
+[core]
+  editor = /usr/bin/vim
+  mergeoptions = 
+[push]
+  default = current
+[giggle]
+  main-window-maximized = false
+  main-window-geometry = 1269x839+117+89
+[include]
+  path = .gitlocal
+[url "ssh://git@heroku.com/"]
+	insteadOf = https://git.heroku.com/
