@@ -1,3 +1,10 @@
+#---------bug bounty Profile for Broken Link Checker----------
+
+blc() {
+subfinder -d $1 | httprobe | waybackurls | egrep -iv ".(jpg|gif|css|png|woff|pdf|svg|js)" | burl | tee brokenlink.txt
+}
+
+
 #------paramlist-------
 
 paramlist() { waybackurls $1 | grep "?" | unfurl keys | sort -u | tee -a paramlist.txt
